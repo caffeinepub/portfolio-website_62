@@ -1,0 +1,98 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Personal Portfolio Website",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create single-page portfolio with Hero, About Me, Skills, Projects, and Contact sections, accessible via sticky navigation",
+      "acceptanceCriteria": [
+        "Sticky navigation bar links scroll smoothly to each section",
+        "Hero section displays a name placeholder, short tagline, and a CTA button",
+        "About Me section contains a bio text block and a profile avatar placeholder",
+        "Skills section lists skill categories with visual indicators (e.g., badges or progress bars)",
+        "Projects section shows a grid of project cards with title, description, and link placeholders",
+        "Contact section includes name, email, and message fields with a submit button"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the existing app structure with a single-page layout containing sticky navigation and five main sections: Hero, About, Skills, Projects, and Contact. Fetch portfolio data from backend on mount using the getPortfolio method. Wire smooth scrolling behavior to navigation links targeting section IDs."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create a sticky top navigation bar component with links to Hero, About Me, Skills, Projects, and Contact sections. Implement smooth scroll behavior when a link is clicked. Style with dark background and amber accent hover states."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create the Hero section component displaying a name placeholder (e.g., 'Your Name'), a short tagline, and a call-to-action button. Use the generated hero background image from frontend/public/assets/generated/hero-bg.dim_1440x800.png as a full-width background. Apply subtle gradient overlays and amber accent styling."
+        },
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "create",
+          "description": "Create the About Me section component displaying bio text (fetched from backend portfolio data) and a profile avatar using the generated image from frontend/public/assets/generated/avatar-placeholder.dim_256x256.png. Use flex layout for text and image alignment."
+        },
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "create",
+          "description": "Create the Skills section component displaying skill categories with visual indicators such as progress bars or badges. Map over the skills array from backend portfolio data. Render skill name and level (transform bigint level to percentage or label). Apply amber accent colors to active skill indicators."
+        },
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "create",
+          "description": "Create the Projects section component displaying a responsive grid of project cards. Map over the projects array from backend portfolio data. Each card shows project name, description, skillsUsed tags, and a link placeholder. Use hover effects and amber accents for interactivity."
+        },
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "create",
+          "description": "Create the Contact section component with a form containing name, email, and message input fields, plus a submit button. Style inputs with dark background and amber focus borders. On submit, log form data to console (no backend submission required per BuildRequest)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply cohesive dark-mode visual theme with monochrome-and-amber palette, clean typography, gradient backgrounds, and smooth transitions",
+      "acceptanceCriteria": [
+        "Consistent color scheme (dark background, amber/gold accents) applied across all sections",
+        "Typography uses a clean, professional sans-serif font with clear heading hierarchy",
+        "Hover and scroll animations feel smooth and polished",
+        "Layout is fully responsive across mobile, tablet, and desktop viewports"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles to implement a dark-mode base with monochrome background colors (dark gray/black) and amber accent colors. Define CSS custom properties for primary, accent, and neutral colors. Set a clean sans-serif font stack (e.g., Inter, system-ui) with responsive font sizing and heading hierarchy. Add smooth transition utilities for hover and scroll animations."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme to include custom dark background colors, amber accent shades, and typography scale matching the design requirements. Add gradient background utilities and animation presets for smooth section transitions and hover effects."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Generate and display stylized abstract hero background and professional avatar placeholder as static frontend assets",
+      "acceptanceCriteria": [
+        "Hero section uses the generated abstract background as a full-width background image",
+        "About Me section displays the generated avatar placeholder image"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Wire the generated hero background image frontend/public/assets/generated/hero-bg.dim_1440x800.png into the Hero section as a background. Use CSS background-image or an img element with absolute positioning and z-index layering to ensure text remains readable over the image."
+        },
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "modify",
+          "description": "Wire the generated avatar placeholder image frontend/public/assets/generated/avatar-placeholder.dim_256x256.png into the About Me section. Display as an img element with rounded styling and amber border accent."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "frontend/src/index.css": "Global styles with dark-mode OKLCH color system using near-black backgrounds and amber/gold accents, custom Inter + Syne fonts, smooth scroll, custom scrollbar, and animation utilities.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Inter/Syne font families, amber color tokens, custom shadow utilities (amber glow variants), gradient background utilities, and fade-in-up animation keyframes.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend portfolio operations — getPortfolio, createPortfolio, addSkill, and addProject — with proper cache invalidation.",
+  "frontend/src/App.tsx": "Root app component that fetches portfolio data from the backend, seeds default data if none exists, tracks active scroll section via IntersectionObserver, and renders all page sections.",
+  "frontend/src/components/Navigation.tsx": "Sticky top navigation bar with smooth-scroll links, active section highlighting, mobile hamburger menu, and a \"Hire Me\" CTA button.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section with generated background image, gradient overlays, animated name/tagline, dual CTA buttons, social links, and a scroll indicator.",
+  "frontend/src/components/About.tsx": "About Me section with generated avatar image, decorative rings, location badge, bio text from backend, stat cards, and a resume download link.",
+  "frontend/src/components/Skills.tsx": "Skills section displaying animated progress bars for backend skill data and a static technology badge grid organized by category.",
+  "frontend/src/components/Projects.tsx": "Responsive project card grid rendering backend project data with numbered cards, skill tags, GitHub and external link icons.",
+  "frontend/src/components/Contact.tsx": "Contact section with info cards and a form (name, email, message) with loading state, success confirmation, and console logging on submit.",
+  "frontend/src/components/Footer.tsx": "Site footer with brand logo, navigation links, social icons, copyright year, and caffeine.ai attribution with UTM tracking."
+}

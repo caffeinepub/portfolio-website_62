@@ -1,0 +1,57 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T10:30:58.816Z",
+  "summary": "The diff implements all four major requirements reasonably well. The frontend has all required sections (Hero, About, Skills, Projects, Contact) with sticky navigation, the backend stores portfolio data and exposes query/update functions, dark-mode amber theme is applied consistently, and the generated images are referenced as static assets. However, the backend uses a non-stable Map (not declared with 'stable' keyword), which means data will NOT survive canister upgrades — violating a specific acceptance criterion of REQ-2. Additionally, the backend only exposes addSkill and addProject as update functions but lacks a direct updateBio function.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Data is stored in stable variables so it survives canister upgrades",
+      "reason": "In backend/main.mo, the portfolios map is declared as 'let portfolios = Map.empty<Text, Portfolio>()' without the 'stable' keyword. This means the data is heap-allocated and will be lost on canister upgrades.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Backend exposes update functions to modify bio, skills, and projects",
+      "reason": "The backend provides addSkill and addProject update functions, but there is no update function to modify or replace the bio text independently. The bio can only be set during createPortfolio, not updated afterward.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Multi-username portfolio system with username-keyed storage and createPortfolio requiring a username parameter",
+      "reason": "The build request describes a single personal portfolio website. The backend implements a multi-user keyed portfolio map with username-based lookups, which was not requested.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "confidence": 0.85,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/About.tsx",
+    "frontend/src/components/Contact.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/Projects.tsx",
+    "frontend/src/components/Skills.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

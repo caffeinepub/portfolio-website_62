@@ -1,0 +1,96 @@
+{
+  "kind": "build_request",
+  "title": "Personal Portfolio Website",
+  "projectName": "My Portfolio",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page portfolio website with the following sections: Hero (name, tagline, call-to-action), About Me, Skills, Projects, and Contact. Each section should be navigable via a sticky top navigation bar.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "i want to create a portfolio website for my profile"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Sticky navigation bar links scroll smoothly to each section",
+        "Hero section displays a name placeholder, short tagline, and a CTA button",
+        "About Me section contains a bio text block and a profile avatar placeholder",
+        "Skills section lists skill categories with visual indicators (e.g., badges or progress bars)",
+        "Projects section shows a grid of project cards with title, description, and link placeholders",
+        "Contact section includes name, email, and message fields with a submit button"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Store portfolio data (bio, skills, projects) in the backend so that the content is persisted and can be read by the frontend.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "i want to create a portfolio website for my profile"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend exposes query functions to retrieve bio text, skills list, and projects list",
+        "Data is stored in stable variables so it survives canister upgrades",
+        "Backend exposes update functions to modify bio, skills, and projects"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply a cohesive, modern dark-mode visual theme with a monochrome-and-amber accent palette, clean sans-serif typography, subtle gradient backgrounds, and smooth section transitions. The design should feel professional and creative, suitable for a developer or designer portfolio.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Consistent color scheme (dark background, amber/gold accents) applied across all sections",
+        "Typography uses a clean, professional sans-serif font with clear heading hierarchy",
+        "Hover and scroll animations feel smooth and polished",
+        "Layout is fully responsive across mobile, tablet, and desktop viewports"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Generate and display a stylized abstract hero background image and a professional avatar placeholder image, served as static assets from frontend/public/assets/generated.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section uses the generated abstract background as a full-width background image",
+        "About Me section displays the generated avatar placeholder image"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must reside in a single Motoko actor in backend/main.mo",
+    "Do not edit any files under frontend/src/hooks/ or frontend/src/components/ui",
+    "Generated images must be served as static assets from frontend/public/assets/generated, not through the backend"
+  ],
+  "nonGoals": [
+    "User authentication or login",
+    "Real-time features or chat",
+    "CMS or third-party content management integrations",
+    "Blog or long-form content publishing",
+    "Multi-language support"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract dark geometric mesh with amber glowing nodes and subtle gradient — full-width hero background (hero-bg.dim_1440x800.png)",
+      "Minimalist illustrated avatar silhouette with dark background and amber accent circle frame (avatar-placeholder.dim_256x256.png)"
+    ],
+    "edits": []
+  }
+}

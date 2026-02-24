@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor defining a portfolio backend with a Map store supporting create, addProject, addSkill, and getPortfolio operations keyed by username.",
+  "feature_evidence.json": "Feature evidence report mapping three portfolio features (single-page layout, dark-mode theme, static assets) to their implementing source files and test IDs.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries for each frontend source file, describing their roles in styling, data fetching, and UI components.",
+  "frontend/index.css": "Tailwind base stylesheet defining OKLCH CSS custom properties for light and dark color themes including backgrounds, foregrounds, and chart colors.",
+  "frontend/index.html": "Minimal HTML entry point that mounts the React app into a root div and loads the TypeScript module entry point.",
+  "frontend/src/App.tsx": "Root React component that seeds default portfolio data to the backend if none exists, tracks the active scroll section via IntersectionObserver, and composes all page sections.",
+  "frontend/src/components/About.tsx": "About Me section component rendering a profile avatar with decorative rings, a bio paragraph, a location badge, and stat cards for experience, projects, and coffee.",
+  "frontend/src/components/Contact.tsx": "Contact section with contact info cards and a controlled form (name, email, message) that simulates async submission and shows a success state on completion.",
+  "frontend/src/components/Footer.tsx": "Renders the site footer with a brand section, smooth-scroll navigation links, and social media icon links (GitHub, LinkedIn, X), plus a copyright bar.",
+  "frontend/src/components/Hero.tsx": "Full-screen hero section displaying the developer's name, tagline, CTA buttons that scroll to Projects/About, and social links with animated fade-in effects.",
+  "frontend/src/components/Navigation.tsx": "Fixed top navigation bar with scroll-aware background blur, active-section highlighting, smooth-scroll links, and a collapsible mobile menu.",
+  "frontend/src/components/Projects.tsx": "Displays a grid of project cards sourced from backend data, each showing a numbered header, description, GitHub/external links, and skill tags.",
+  "frontend/src/components/Skills.tsx": "Renders a Skills section with animated progress bars for core competencies from backend data and a static categorized technology tag grid (Frontend, Backend, Tools).",
+  "frontend/src/hooks/useActor.ts": "Custom React hook that creates and caches an ICP backend actor (anonymous or authenticated via Internet Identity) using React Query, and invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and hook for Internet Identity authentication on the ICP platform, managing login state, identity persistence, and AuthClient lifecycle.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for fetching and mutating portfolio data (portfolio, skills, projects) via the backend actor.",
+  "frontend/src/index.css": "Global stylesheet defining a dark-mode amber/gold design system using Tailwind CSS, custom CSS variables in OKLCH, and utility animations like float and fadeInUp.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app wrapped with QueryClientProvider and InternetIdentityProvider.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with custom OKLCH-based color tokens, amber accent shades, typography/display fonts, and shadow utilities.",
+  "project_state.json": "Tracks project metadata, existing implemented features, and pending feature requests for the portfolio website build, including a pending backend data persistence task (AR-2)."
+}
